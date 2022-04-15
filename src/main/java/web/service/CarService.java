@@ -18,6 +18,8 @@ public class CarService implements CarServiceImpl {
         carsList.add(new Car("Kalina", "1117", "white"));
         carsList.add(new Car("Granta", "2190", "black"));
         carsList.add(new Car("GAZ", "3102", "silver"));
-        return carsList.stream().limit(count).collect(Collectors.toList());
+        if (count != 0 && count <= carsList.size() && count >= 0)
+            return carsList.stream().limit(count).collect(Collectors.toList());
+        return carsList;
     }
 }
